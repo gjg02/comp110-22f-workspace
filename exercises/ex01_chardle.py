@@ -1,52 +1,61 @@
-"""EX01 - Chardle - A cute step toward Wordle"""
+"""EX01 - Chardle - A cute step toward Wordle."""
 __author__ = "730392807"
 
-X: str = input("Enter a 5 character word: ")
+Word: str = input("Enter a 5 character word: ")
 
-if len(X) != 5:
+if len(Word) != 5:
     print("Error: Word must contain 5 characters")
     exit()
 
-Y: str = input("Enter a single character: ")
+Letter: str = input("Enter a single character: ")
 
-if len(Y) != 1:
+if len(Letter) != 1:
     print("Error: Character must be a single character")
     exit()
 
-print("Searching for " + Y + " in " + X)
+print("Searching for " + Letter + " in " + Word)
 
-if Y[0]==X[0]:
-    print(Y + " is found in index 0")
+if Letter[0] == Word[0]:
+    print(Letter + " found at index 0")
 
-if Y[0]==X[1]:
-    print(Y + "is found in index 1")  
+if Letter[0] == Word[1]:
+    print(Letter + " found at index 1")  
 
-if Y[0]==X[2]:
-    print(Y + " is found in index 2")   
+if Letter[0] == Word[2]:
+    print(Letter + " found at index 2")   
 
-if Y[0]==X[3]:
-    print(Y + " is found in index 3")    
+if Letter[0] == Word[3]:
+    print(Letter + " found at index 3")    
 
-if Y[0]==X[4]:
-    print(Y + " is found in index 4") 
+if Letter[0] == Word[4]:
+    print(Letter + " found at index 4") 
     
 
-str(Y)
-V = str(X)
-str=(V)
-V = V.count(Y) 
+count = 0
 
-if V == 1:
-    print("1 instance of " + Y + " is found in " + X)
+if Word[0] == Letter:
+    count = count + 1
 
-if V == 2:
-    print("2 instances of " + Y + " is found in " + X)
+if Word[1] == Letter:
+    count = count + 1
 
-if V == 3:
-    print("3 instances of " + Y + " is found in " + X)
+if Word[2] == Letter:
+    count = count + 1
 
-if V == 0:
-    print("0 instances of " + Y + "is found in " + X)
+if Word[3] == Letter:
+    count = count + 1
+
+if Word[4] == Letter:
+    count = count + 1
+
+if count > 1: 
+    print(str(count) + " instances of " + Letter + " found in " + Word)
+
+if count == 1:
+    print("1 instance of " + Letter + " found in " + Word)
+
+if count == 0: 
+    print("No instances of " + Letter + " found in " + Word)
 
 
 
